@@ -16,7 +16,7 @@
       color: white;
     }
 </style>
-@section('title', 'add.blade.php')
+@section('title', 'board.add.blade.php')
 
 
 @section('content')
@@ -29,24 +29,20 @@
   @endforeach
 </ul>
 @endif
-<form action="/add" method="post">
+<form action="/board/add" method="post">
   <table>
     @csrf
     <tr>
-      <th>
-        name
-      </th>
-      <td>
-        <input type="text" name="name" value="{{old('name')}}">
-      </td>
+      <th>person_id:</th>
+      <td><input type="number" name="person_id"></td>
     </tr>
     <tr>
-      <th>
-        age
-      </th>
-      <td>
-        <input type="text" name="age" value="{{old('age')}}">
-      </td>
+      <th>title:</th>
+      <td><input type="text" name="title"></td>
+    </tr>
+    <tr>
+      <th>message:</th>
+      <td><input type="text" name="message"></td>
     </tr>
   </table>
   <button>送信</button>
