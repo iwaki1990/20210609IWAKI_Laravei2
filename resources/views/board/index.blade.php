@@ -22,7 +22,7 @@
   @foreach ($items as $item)
   <tr>
     <td>{{ $item->message }}</td>
-    <td>{{ $item->person->name }}</td>
+    <td>{{ $item->person }}</td>
   </tr>
   @endforeach
 </table>

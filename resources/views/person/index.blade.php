@@ -13,36 +13,23 @@
 </style>
 @section('title', 'person.index.blade.php')
 
+
 @section('content')
 <table>
   <tr>
     <th>Person</th>
     <th>Board</th>
   </tr>
-  @foreach ($hasItems as $item)
+  @foreach ($items as $item)
   <tr>
     <td>
       {{$item->getData()}}
     </td>
     <td>
-      <table>
-        @foreach ($item->boards as $obj)
-        <tr>
-          <td>{{ $obj->getData() }}</td>
-        </tr>
-        @endforeach
-      </table>
+      @if ($item->board != null)
+      {{ $item->board->getData() }}
+      @endif
     </td>
-  </tr>
-  @endforeach
-</table>
-<table>
-  <tr>
-    <th>Person</th>
-  </tr>
-  @foreach ($noItems as $item)
-  <tr>
-    <td>{{ $item->getData() }}</td>
   </tr>
   @endforeach
 </table>
