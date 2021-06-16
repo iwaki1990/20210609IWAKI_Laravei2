@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BoardController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\SessionController;
-use App\Models\Product;　//上部に追加
+use App\Models\Product;//上部に追加
+use App\Models\Person;
 
 
 Route::get('/board', [BoardController::class, 'index']);
